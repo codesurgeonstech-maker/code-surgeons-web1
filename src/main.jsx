@@ -800,20 +800,7 @@ const projects = [
 
 const DYNAMIC_WORDS = ["Websites.", "Apps.", "Windows Software.", "Agentic AI."];
 
-const AINodesAnim = () => (
-  <svg width="280" height="280" viewBox="0 0 280 280" fill="none">
-    {[[140, 140, 8], [80, 80, 5], [200, 80, 5], [60, 180, 5], [220, 180, 5], [140, 40, 4], [40, 140, 4], [240, 140, 4], [140, 240, 4]].map(([x, y, r], i) => (
-      <circle key={i} cx={x} cy={y} r={r} fill={COLORS.sage} opacity={0.4 + i * 0.03} />
-    ))}
-    {[[140, 140, 80, 80], [140, 140, 200, 80], [140, 140, 60, 180], [140, 140, 220, 180], [140, 140, 140, 40], [140, 140, 40, 140], [140, 140, 240, 140], [140, 140, 140, 240]].map(([x1, y1, x2, y2], i) => (
-      <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={COLORS.sage} strokeWidth="0.5" opacity="0.2" />
-    ))}
-    {[[80, 80, 60, 60], [200, 80, 210, 55], [60, 180, 40, 200], [220, 180, 240, 195]].map(([x1, y1, x2, y2], i) => (
-      <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={COLORS.sageLight} strokeWidth="0.4" opacity="0.15" />
-    ))}
-  </svg>
-);
-
+ 
 function useFadeIn() {
   const ref = useRef(null);
   useEffect(() => {
