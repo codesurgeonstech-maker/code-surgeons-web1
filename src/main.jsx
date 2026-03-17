@@ -855,7 +855,7 @@ export default function MainPage() {
 
       {/* NAV */}
       <nav className={`nav ${scrolled ? "scrolled" : ""}`}>
-        <a href="#" className="nav-logo">
+        <a className="nav-logo">
           Code Surgeons Tech
         </a>
         <div className="nav-links">
@@ -1137,7 +1137,7 @@ export default function MainPage() {
             <h5>Services</h5>
             <ul>
               {["Web Development", "Mobile Apps", "Windows Apps", "Agentic AI", "Custom Software"].map(l => (
-                <li key={l}><a href="#">{l}</a></li>
+                <li key={l}><a>{l}</a></li>
               ))}
             </ul>
           </div>
@@ -1145,16 +1145,18 @@ export default function MainPage() {
             <h5>Company</h5>
             <ul>
               {["About", "Work", "Process", "Blog", "Careers"].map(l => (
-                <li key={l}><a href="#">{l}</a></li>
+                <li key={l}><a>{l}</a></li>
               ))}
             </ul>
           </div>
           <div className="footer-col">
             <h5>Contact</h5>
             <ul>
-              <li><a href="#">dev@codesurgeons.in</a></li>
-              <li><a href="#">Udumalpettai, Tamil Nadu</a></li>
-              <li><a href="#">+91 9791086570</a></li>
+              <li><a href="mailto:dev@codesurgeons.in">dev@codesurgeons.in</a></li>
+              <li><a href="https://maps.google.com/?q=Udumalpettai,+Tamil+Nadu" target="_blank" rel="noopener noreferrer">
+                Udumalpettai, Tamil Nadu
+              </a></li>
+              <li><a href="tel:+919791086570">+91 9791086570</a></li>
             </ul>
           </div>
         </div>
