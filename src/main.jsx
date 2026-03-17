@@ -5,7 +5,6 @@ import {
   Monitor,
   Bot,
   Settings,
-  ArrowUpRight,
   X
 } from "lucide-react";
 
@@ -825,8 +824,7 @@ export default function MainPage() {
   const [dynIdx, setDynIdx] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-  const [active, setActive] = useState("home"); // default section
-
+ 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
@@ -841,13 +839,7 @@ export default function MainPage() {
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const workColors = [
-    { bg: "linear-gradient(135deg, #1a2e1a 0%, #0f1f0f 100%)", pattern: COLORS.sage },
-    { bg: "linear-gradient(135deg, #111a2e 0%, #0a1020 100%)", pattern: "#7B9BC7" },
-    { bg: "linear-gradient(135deg, #2a111e 0%, #1a0a12 100%)", pattern: "#C77B9B" },
-  ];
+  }; 
 
   return (
     <>
@@ -862,8 +854,7 @@ export default function MainPage() {
           {["Home", "Services", "Work", "AI"].map((l) => (
             <button
               key={l}
-              onClick={() => scrollToSection(l.toLowerCase())}
-              className={active === l.toLowerCase() ? "active" : ""}
+              onClick={() => scrollToSection(l.toLowerCase())} 
             >
               {l}
             </button>
