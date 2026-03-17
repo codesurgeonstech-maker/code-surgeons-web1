@@ -800,7 +800,7 @@ const projects = [
 
 const DYNAMIC_WORDS = ["Websites.", "Apps.", "Windows Software.", "Agentic AI."];
 
- 
+
 function useFadeIn() {
   const ref = useRef(null);
   useEffect(() => {
@@ -855,7 +855,7 @@ export default function MainPage() {
 
       {/* NAV */}
       <nav className={`nav ${scrolled ? "scrolled" : ""}`}>
-        <a className="nav-logo">
+        <a href="/" className="nav-logo">
           Code Surgeons Tech
         </a>
         <div className="nav-links">
@@ -1137,7 +1137,9 @@ export default function MainPage() {
             <h5>Services</h5>
             <ul>
               {["Web Development", "Mobile Apps", "Windows Apps", "Agentic AI", "Custom Software"].map(l => (
-                <li key={l}><a>{l}</a></li>
+                <li key={l}>
+                  <a href="#!">{l}</a>
+                </li>
               ))}
             </ul>
           </div>
@@ -1145,7 +1147,9 @@ export default function MainPage() {
             <h5>Company</h5>
             <ul>
               {["About", "Work", "Process", "Blog", "Careers"].map(l => (
-                <li key={l}><a>{l}</a></li>
+                <li key={l}>
+                  <a href={`#${l.toLowerCase()}`}>{l}</a>
+                </li>
               ))}
             </ul>
           </div>
@@ -1164,7 +1168,9 @@ export default function MainPage() {
           <p className="footer-copy">© 2026 Code Surgeons Tech. All rights reserved.</p>
           <div className="footer-social">
             {["𝕏", "in", "gh", "yt"].map(s => (
-              <a key={s} href="#">{s}</a>
+              <a key={s} href="#!" onClick={(e) => e.preventDefault()}>
+                {s}
+              </a>
             ))}
           </div>
         </div>
