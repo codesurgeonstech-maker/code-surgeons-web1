@@ -1,7 +1,86 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f8f9fb;
+  color: #191c1e;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+::-webkit-scrollbar-thumb {
+  background: #0052cc;
+  border-radius: 2px;
+}
+
+::selection {
+  background: rgba(0, 82, 204, 0.15);
+  color: #0052cc;
+}
+
+/* Responsive grid helpers */
+@media (max-width: 1024px) {
+  /* Two-col -> single col on medium screens */
+  .resp-two-col {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .resp-two-col {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+}
+
+/* Global button hover polish */
+button:focus-visible, a:focus-visible {
+  outline: 2px solid #0052cc;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Responsive contact + featured blog grids */
+@media (max-width: 860px) {
+  .contact-grid-resp {
+    grid-template-columns: 1fr !important;
+  }
+  .featured-card-resp {
+    grid-template-columns: 1fr !important;
+  }
+  .featured-img-resp {
+    height: 220px !important;
+  }
+  .row-two-resp {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
 }
