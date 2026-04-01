@@ -32,12 +32,12 @@ const SERVICES = [
   { icon: <Users size={22} color={C.primaryCont} />, title: 'Custom Software', desc: 'Tailored systems with zero bloat. Just performance-obsessed engineering aligned to your domain.' },
 ];
 
-const STATS = [
-  { n: '50+', label: 'Products Shipped', sub: 'Across web, mobile, desktop & AI' },
-  { n: '20+', label: 'Global Clients', sub: 'Powering mission-critical systems' },
-  { n: '100%', label: 'AI-First Architecture', sub: 'Intelligence built in, not bolted on' },
-  { n: '4yrs', label: 'Deep Domain Expertise', sub: 'Windows, AI, CRM, ERP & Web' },
-];
+// const STATS = [
+//   { n: '50+', label: 'Products Shipped', sub: 'Across web, mobile, desktop & AI' },
+//   { n: '20+', label: 'Global Clients', sub: 'Powering mission-critical systems' },
+//   { n: '100%', label: 'AI-First Architecture', sub: 'Intelligence built in, not bolted on' },
+//   { n: '4yrs', label: 'Deep Domain Expertise', sub: 'Windows, AI, CRM, ERP & Web' },
+// ];
 
 const FEATURES = [
   { label: 'Zero-Dependency Core', desc: 'Lightweight foundations for blazing-fast start times.' },
@@ -291,14 +291,14 @@ const codeHeader = { background: 'rgba(255,255,255,0.05)', padding: '12px 16px',
 const codeDot = (c) => ({ width: 12, height: 12, borderRadius: '50%', background: c, display: 'inline-block' });
 const codePre = { margin: '0 24px', fontFamily: 'monospace', fontSize: 13, lineHeight: 1.7, overflowX: 'auto', color: 'rgba(255,255,255,0.8)', boxSizing: 'border-box' };
 
-const statsBand = {
-  background: '#fff', padding: '48px 5%',
-  display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: 32,
-  borderTop: `1px solid ${C.outlineVar}30`, borderBottom: `1px solid ${C.outlineVar}30`,
-};
-const statItem = { textAlign: 'left', padding: '0 16px' };
-const statNum = { fontFamily: FONT.headline, fontSize: 'clamp(28px,4vw,48px)', fontWeight: 800, color: C.primaryCont, lineHeight: 1 };
-const statLabel = { fontFamily: FONT.headline, fontWeight: 700, fontSize: 14, color: C.onBg, margin: '6px 0 4px' };
+// const statsBand = {
+//   background: '#fff', padding: '48px 5%',
+//   display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: 32,
+//   borderTop: `1px solid ${C.outlineVar}30`, borderBottom: `1px solid ${C.outlineVar}30`,
+// };
+// const statItem = { textAlign: 'left', padding: '0 16px' };
+// const statNum = { fontFamily: FONT.headline, fontSize: 'clamp(28px,4vw,48px)', fontWeight: 800, color: C.primaryCont, lineHeight: 1 };
+// const statLabel = { fontFamily: FONT.headline, fontWeight: 700, fontSize: 14, color: C.onBg, margin: '6px 0 4px' };
 
 const sectionBase = { padding: '96px 5%' };
 const sectionLabel = {

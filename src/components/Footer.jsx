@@ -1,5 +1,4 @@
 import { C, FONT, GRADIENT } from '../styles/theme';
-import { useState } from 'react';
 import csLogo from '../assets/cslogo.png';
 
 const s = {
@@ -72,7 +71,7 @@ export default function Footer({ setPage }) {
         <div>
           <div style={s.colHead}>Contact</div>
           <a href="mailto:dev@codesurgeons.in" style={s.link}>dev@codesurgeons.in</a>
-          <a target="_blank" rel="noopener noreferrer" style={s.link}>LinkedIn</a>
+          {/* <a target="_blank" rel="noopener noreferrer" style={s.link}>LinkedIn</a> */}
           <span style={s.link} onClick={() => nav('contact')}>Start a Project →</span>
         </div>
       </div>
