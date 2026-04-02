@@ -64,7 +64,7 @@ export default function Contact({ setPage }) {
                   <div style={contactIcon}><MapPin size={18} color={C.primaryCont} /></div>
                   <div>
                     <div style={contactLabel}>Headquarters</div>
-                    <div style={contactVal}>No 40/5, Kolumam Main Road, <br />Udumalpet, Tamil Nadu, 624-128</div>
+                    <div style={contactVal}>No 40/5, Kolumam Main Road, <br />Udumalpet, Tamil Nadu, 642-128</div>
                   </div>
                 </div>
                 <div style={contactItem}>

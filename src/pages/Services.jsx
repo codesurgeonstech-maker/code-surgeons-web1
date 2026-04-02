@@ -6,8 +6,9 @@ const RESP_CSS = `
   @media (max-width: 860px) {
     .svc-detail-grid { grid-template-columns: 1fr !important; direction: ltr !important; gap: 40px !important; }
     .svc-detail-grid > div { direction: ltr !important; }
-    .code-resp { max-width: 100% !important; width: 100% !important; margin-top: 32px !important; }
+    .code-resp { max-width: 100% !important; width: 100% !important; margin-top: 24px !important; }
     .code-resp pre { padding: 16px !important; margin: 0 !important; }
+    .svc-side-img { height: 260px !important; }
   }
 `;
 
@@ -19,6 +20,7 @@ const SERVICES_DETAIL = [
     desc: 'High-performance native applications optimized for Microsoft environments. We leverage WPF and .NET Core for seamless OS integration. Zero-lag execution. High-fidelity interfaces.',
     features: ['Native Performance', 'Multi-threaded Processing', 'WPF & .NET Core', 'Low-latency Execution'],
     code: '// Lead Prioritization Logic\nif (lead.score > 85) {\n  dispatch.notify("High Priority");\n  crm.elevate(lead.id);\n}',
+    img: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop'
   },
   {
     icon: <Database size={28} color={C.primaryCont} />,
@@ -27,6 +29,7 @@ const SERVICES_DETAIL = [
     desc: 'Customer relationships shouldn\'t fit into a box. We build bespoke management platforms tailored to your specific sales cycle and touchpoints. Every workflow, your way.',
     features: ['Pipeline Automation', 'Custom Reporting', 'Lead Scoring', 'Multi-channel Sync'],
     code: '// Pipeline Automation\nconst pipeline = await CRM.build({\n  stages: customWorkflow,\n  scoring: AIModel.v2,\n  notify: realTime\n});',
+    img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop'
   },
   {
     icon: <CloudCog size={28} color={C.primaryCont} />,
@@ -35,6 +38,7 @@ const SERVICES_DETAIL = [
     desc: 'Centralize your resources, logistics, and finance into a single, cohesive source of truth designed for scale. Decoupled architectures for modular growth.',
     features: ['Microservices Architecture', 'SecOps First', 'Big Data Rails', 'API Ecosystems'],
     code: '// ERP Core Module\nconst erp = await Enterprise.init({\n  modules: [\'finance\',\'hr\',\'ops\'],\n  scale: \'unlimited\',\n  security: \'enterprise-grade\'\n});',
+    img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop'
   },
 ];
 
@@ -80,7 +84,7 @@ export default function Services({ setPage, setModalOpen }) {
       {SERVICES_DETAIL.map((svc, i) => (
         <section key={i} style={{ ...secBase, background: i % 2 === 1 ? C.surfaceLow : C.surface }}>
           <FadeIn>
-            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:72, alignItems:'center', ...(i%2===1 ? {direction:'rtl'} : {}) }}>
+            <div className="svc-detail-grid" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:72, alignItems:'center', ...(i%2===1 ? {direction:'rtl'} : {}) }}>
               <div style={{ direction:'ltr' }}>
                 <div style={iconBox}>{svc.icon}</div>
                 <div style={subLabel}>{svc.sub}</div>
@@ -98,7 +102,8 @@ export default function Services({ setPage, setModalOpen }) {
                   Start a Project <ArrowUpRight size={16} style={{ marginLeft:6, verticalAlign:'middle' }} />
                 </button>
               </div>
-              <div className="code-resp" style={{ direction:'ltr', width: '100%', maxWidth: '100%' }}>
+              <div className="code-resp" style={{ direction:'ltr', width: '100%', maxWidth: '100%', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <img src={svc.img} alt={svc.title} className="svc-side-img" style={{ width: '100%', height: '280px', objectFit: 'cover', borderRadius: '16px', border: `1px solid ${C.outlineVar}40`, boxShadow: '0 20px 50px rgba(0,24,72,0.1)' }} loading="lazy" />
                 <div style={codeBlock}>
                   <div style={codeBar}>
                     <span style={dot('#ff5f57')} /><span style={dot('#febc2e')} /><span style={dot('#28c840')} />

@@ -9,7 +9,7 @@ const POSTS = [
     excerpt: 'A deep dive into how we architect multi-agent systems at CodeSurgeons — covering state management, tool use, and the "surgical" evaluation framework that keeps our agents reliable.',
     date: 'Mar 28, 2026',
     readTime: '12 min read',
-    img: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=800&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop',
     featured: true,
   },
   {
@@ -18,7 +18,7 @@ const POSTS = [
     excerpt: 'Web apps have dominated, but for mission-critical enterprise workflows, native Windows apps deliver performance and security that no browser can match. Here\'s our technical case.',
     date: 'Mar 15, 2026',
     readTime: '8 min read',
-    img: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?q=80&w=800&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop',
     featured: false,
   },
   {
@@ -27,7 +27,7 @@ const POSTS = [
     excerpt: 'Our design philosophy prohibits 1px borders for section separation. Instead, we use tonal shifts, spatial breathing room, and layered surfaces. Here\'s why it creates better UX.',
     date: 'Mar 5, 2026',
     readTime: '6 min read',
-    img: 'https://images.unsplash.com/photo-1618477388954-7852f32655ec?q=80&w=800&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop',
     featured: false,
   },
   {
@@ -36,7 +36,7 @@ const POSTS = [
     excerpt: 'After delivering 15+ custom CRM implementations, we ran the numbers. For companies with complex sales cycles, bespoke CRM pays for itself within 18 months.',
     date: 'Feb 22, 2026',
     readTime: '10 min read',
-    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop',
     featured: false,
   },
   {
@@ -45,7 +45,7 @@ const POSTS = [
     excerpt: 'Retrieval-Augmented Generation gives you recency and control. Fine-tuning gives you style and compression. We break down when to use each — and when to combine them.',
     date: 'Feb 10, 2026',
     readTime: '9 min read',
-    img: 'https://images.unsplash.com/photo-1625314887424-9f190599d56d?q=80&w=800&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1655393001859-994df50ae1cd?q=80&w=800&auto=format&fit=crop',
     featured: false,
   },
   {
@@ -54,12 +54,30 @@ const POSTS = [
     excerpt: 'Every third-party dependency is a performance tax. We document how eliminating non-essential libraries shaved 60% off our app bundle sizes.',
     date: 'Jan 28, 2026',
     readTime: '7 min read',
-    img: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=800&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop',
     featured: false,
   },
 ];
 
 const CATS = ['All', 'Agentic AI', 'Windows Apps', 'Engineering', 'CRM/ERP'];
+
+const RESP_CSS = `
+  @media (max-width: 860px) {
+    .feat-card-grid { grid-template-columns: 1fr !important; }
+    .feat-img-wrap { height: 260px !important; }
+    .post-grid { grid-template-columns: 1fr 1fr !important; }
+    .feat-content { padding: 32px 24px !important; }
+    .sub-btn-wrap { flex-direction: column !important; max-width: 100% !important; margin-top: 24px !important; }
+    .sub-btn-wrap > input, .sub-btn-wrap > button { width: 100% !important; flex: none !important; }
+    .blog-hero { padding: 80px 5% !important; }
+  }
+  @media (max-width: 580px) {
+    .post-grid { grid-template-columns: 1fr !important; }
+    .feat-img-wrap { height: 200px !important; }
+    .h1-text { font-size: 34px !important; }
+    .blog-hero { padding: 60px 4% !important; }
+  }
+`;
 
 export default function Blog({ setPage }) {
   const featured = POSTS[0];
@@ -67,14 +85,15 @@ export default function Blog({ setPage }) {
 
   return (
     <div style={{ background: C.bg, fontFamily: FONT.body }}>
+      <style dangerouslySetInnerHTML={{ __html: RESP_CSS }} />
 
       {/* HERO */}
-      <section style={pageHero}>
+      <section className="blog-hero" style={pageHero}>
         <div style={heroBg} />
         <FadeIn>
           <div style={{ position: 'relative', zIndex: 1, maxWidth: 680 }}>
             <div style={chip}>Technical Insights</div>
-            <h1 style={h1Sty}>
+            <h1 className="h1-text" style={h1Sty}>
               Engineering deep-dives,<br />
               <span style={{ background: GRADIENT, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                 architecture decisions,
@@ -91,15 +110,15 @@ export default function Blog({ setPage }) {
       {/* FEATURED POST */}
       <section style={{ padding: '0 5% 64px', background: C.surface }}>
         <FadeIn>
-          <div style={featuredCard}
+          <div className="feat-card-grid" style={featuredCard}
             onMouseEnter={e => { e.currentTarget.style.boxShadow = SHADOW; }}
             onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; }}
           >
-            <div style={featImgWrap}>
+            <div className="feat-img-wrap" style={featImgWrap}>
               <img src={featured.img} alt={featured.title} style={featImg} loading="lazy" />
               <div style={featOverlay} />
             </div>
-            <div style={featContent}>
+            <div className="feat-content" style={featContent}>
               <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 16, flexWrap: 'wrap' }}>
                 <span style={catChip}><Tag size={11} /> &nbsp;{featured.category}</span>
                 <span style={metaText}><Clock size={12} /> &nbsp;{featured.readTime}</span>
@@ -127,7 +146,7 @@ export default function Blog({ setPage }) {
             <button key={c} style={filterBtn}>{c}</button>
           ))}
         </div>
-        <div style={postGrid}>
+        <div className="post-grid" style={postGrid}>
           {rest.map((post, i) => (
             <FadeIn key={post.title} delay={i * 80}>
               <article style={postCard}
@@ -169,7 +188,7 @@ export default function Blog({ setPage }) {
             <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)', marginBottom: 32, fontWeight: 300 }}>
               Subscribe for technical insights. No noise — just the articles worth reading.
             </p>
-            <div style={{ display: 'flex', gap: 12, maxWidth: 420, margin: '0 auto', flexWrap: 'wrap' }}>
+            <div className="sub-btn-wrap" style={{ display: 'flex', gap: 12, maxWidth: 420, margin: '0 auto', flexWrap: 'wrap' }}>
               <input
                 type="email"
                 placeholder="your@email.com"
