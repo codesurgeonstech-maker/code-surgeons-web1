@@ -1,5 +1,6 @@
 import { C, FONT, GRADIENT, SHADOW } from '../styles/theme';
 import FadeIn from '../components/FadeIn';
+import SEOHead, { SEO_PAGES } from '../components/SEOHead';
 import { Monitor, Database, CloudCog, ArrowUpRight, CheckCircle, Shield, Cpu, Network } from 'lucide-react';
 
 const RESP_CSS = `
@@ -59,6 +60,7 @@ const PILLARS = [
 export default function Services({ setPage, setModalOpen }) {
   return (
     <div style={{ background: C.bg, fontFamily: FONT.body }}>
+      <SEOHead {...SEO_PAGES.services} />
       <style dangerouslySetInnerHTML={{ __html: RESP_CSS }} />
       {/* PAGE HERO */}
       <section style={pageHero}>

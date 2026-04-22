@@ -1,5 +1,6 @@
 import { C, FONT, GRADIENT, SHADOW } from '../styles/theme';
 import FadeIn from '../components/FadeIn';
+import SEOHead, { SEO_PAGES } from '../components/SEOHead';
 import { ArrowUpRight, MapPin, Clock, Users, Zap, Brain, Code2, Globe } from 'lucide-react';
 
 const OPENINGS = [
@@ -51,6 +52,7 @@ const VALUES = [
 export default function Careers({ setPage }) {
   return (
     <div style={{ background: C.bg, fontFamily: FONT.body }}>
+      <SEOHead {...SEO_PAGES.careers} />
 
       {/* HERO */}
       <section style={darkHero}>

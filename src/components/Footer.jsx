@@ -88,8 +88,11 @@ export default function Footer({ setPage }) {
           footer > div:first-child { grid-template-columns: 1fr 1fr !important; gap: 40px !important; }
         }
         @media(max-width:600px){
-          footer > div:first-child { grid-template-columns: 1fr !important; gap: 32px !important; }
-          footer > div:last-child { flex-direction: column !important; gap: 12px !important; }
+          footer { padding: 48px 5% 24px !important; }
+          footer > div:first-child { grid-template-columns: repeat(2, 1fr) !important; gap: 32px 16px !important; }
+          footer > div:first-child > div:first-child { grid-column: 1 / -1; margin-bottom: 8px; }
+          footer > div:first-child > div:last-child { grid-column: 1 / -1; }
+          footer > div:last-child { flex-direction: column !important; align-items: flex-start !important; gap: 20px !important; padding-top: 24px !important; }
         }
       `}</style>
     </footer>

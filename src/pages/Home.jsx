@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { C, FONT, GRADIENT, SHADOW } from '../styles/theme';
 import FadeIn from '../components/FadeIn';
+import SEOHead, { SEO_PAGES } from '../components/SEOHead';
 import { CheckCircle, ArrowUpRight, Zap, Brain, Code2, Users, Globe } from 'lucide-react';
 
 const RESPONSIVE_CSS = `
@@ -66,6 +67,7 @@ export default function Home({ setPage, setModalOpen }) {
 
   return (
     <div style={{ background: C.bg, fontFamily: FONT.body }}>
+      <SEOHead {...SEO_PAGES.home} />
       <style dangerouslySetInnerHTML={{ __html: RESPONSIVE_CSS }} />
       {/* HERO */}
       <section className="home-hero" style={heroStyle}>

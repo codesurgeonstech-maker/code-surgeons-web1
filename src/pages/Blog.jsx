@@ -1,5 +1,6 @@
 import { C, FONT, GRADIENT, SHADOW } from '../styles/theme';
 import FadeIn from '../components/FadeIn';
+import SEOHead, { SEO_PAGES } from '../components/SEOHead';
 import { ArrowUpRight, Clock, Tag } from 'lucide-react';
 
 const POSTS = [
@@ -85,6 +86,7 @@ export default function Blog({ setPage }) {
 
   return (
     <div style={{ background: C.bg, fontFamily: FONT.body }}>
+      <SEOHead {...SEO_PAGES.blog} />
       <style dangerouslySetInnerHTML={{ __html: RESP_CSS }} />
 
       {/* HERO */}

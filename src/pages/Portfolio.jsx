@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { C, FONT, GRADIENT, SHADOW } from '../styles/theme';
 import FadeIn from '../components/FadeIn';
+import SEOHead, { SEO_PAGES } from '../components/SEOHead';
 import { ArrowUpRight, Monitor, Brain, Globe, Database } from 'lucide-react';
 
 const FILTERS = ['All', 'Windows Apps', 'Agentic AI', 'CRM/ERP', 'Web'];
@@ -64,6 +65,7 @@ export default function Portfolio({ setPage, setModalOpen }) {
 
   return (
     <div style={{ background: C.bg, fontFamily: FONT.body }}>
+      <SEOHead {...SEO_PAGES.portfolio} />
 
       {/* HERO */}
       <section style={pageHero}>

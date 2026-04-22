@@ -1,3 +1,25 @@
-# https://www.robotstxt.org/robotstxt.html
+# CodeSurgeons Tech — robots.txt
+# Software Company: Udumalpet | Coimbatore | Tirupur | Palani | Tamil Nadu | India
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Allow major search engine crawlers explicitly
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Disallow admin / build artifacts
+Disallow: /static/js/*.map
+Disallow: /static/css/*.map
+
+# Sitemap location
+Sitemap: https://www.codesurgeonstech.com/sitemap.xml

@@ -1,5 +1,6 @@
 import { C, FONT, SHADOW } from '../styles/theme';
 import FadeIn from '../components/FadeIn';
+import SEOHead, { SEO_PAGES } from '../components/SEOHead';
 import { Brain, Workflow, Network, Cpu, ArrowUpRight, Zap, GitBranch, MessageSquare } from 'lucide-react';
 
 const CAPABILITIES = [
@@ -44,6 +45,7 @@ class SurgeonAgent:
 export default function AgenticAI({ setPage, setModalOpen }) {
   return (
     <div style={{ background: C.bg, fontFamily: FONT.body }}>
+      <SEOHead {...SEO_PAGES.ai} />
 
       {/* HERO — dark themed for AI page */}
       <section style={aiHero}>

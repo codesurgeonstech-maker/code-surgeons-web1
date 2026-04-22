@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { C, FONT, GRADIENT } from '../styles/theme';
 import FadeIn from '../components/FadeIn';
+import SEOHead, { SEO_PAGES } from '../components/SEOHead';
 import { MapPin, Mail, Linkedin, Send, CheckCircle } from 'lucide-react';
 
 const RESP_CSS = `
@@ -24,6 +25,7 @@ export default function Contact({ setPage }) {
 
   return (
     <div style={{ background: C.bg, fontFamily: FONT.body }}>
+      <SEOHead {...SEO_PAGES.contact} />
       <style dangerouslySetInnerHTML={{ __html: RESP_CSS }} />
 
       {/* HERO */}
